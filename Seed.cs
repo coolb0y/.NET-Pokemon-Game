@@ -38,7 +38,8 @@ namespace webapi
                         },
                         Owner = new Owner()
                         {
-                            Name = "Jack",
+                            FirstName = "Jack",
+                            LastName = "Dorse",
                             Gym = "Brocks Gym",
                             Country = new Country()
                             {
@@ -67,7 +68,8 @@ namespace webapi
                         },
                         Owner = new Owner()
                         {
-                            Name = "Harry",
+                            FirstName = "Harry",
+                            LastName = "Potter",
                             Gym = "Mistys Gym",
                             Country = new Country()
                             {
@@ -96,8 +98,8 @@ namespace webapi
                         },
                         Owner = new Owner()
                         {
-                            Name = "Ash",
-
+                            FirstName = "Ash",
+                            LastName = "Nam",
                             Gym = "Ashs Gym",
                             Country = new Country()
                             {
