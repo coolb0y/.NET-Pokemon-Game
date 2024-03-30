@@ -6,6 +6,7 @@
 ```powershell
 dotnet ef migrations add InitialCreate
 dotnet ef database update
+dotnet run seeddata
 ```
 - the above command will see the table. 
 - Now we can run our code.
