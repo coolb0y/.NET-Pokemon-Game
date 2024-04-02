@@ -34,15 +34,15 @@ namespace webapi.Controllers
             return Ok(owners);
         }
 
-        [HttpGet("{countryId}")]
+        [HttpGet("{ownerId}")]
         [ProducesResponseType(200, Type = typeof(CountryDto))]
         [ProducesResponseType(400)]
-        public IActionResult GetOnwer(int ownerId)
+        public IActionResult GetOwner(int ownerId)
         {
             if (!_ownerRepository.OwnerExists(ownerId))
                 return NotFound();
 
-            var owner = _mapper.Map<CountryDto>(_ownerRepository.GetOwner(ownerId));
+            var owner = _mapper.Map<OwnerDto>(_ownerRepository.GetOwner(ownerId));
 
             if (!ModelState.IsValid)
             {

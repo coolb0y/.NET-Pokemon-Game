@@ -57,7 +57,7 @@ namespace webapi.Controllers
         [ProducesResponseType(400)]
         public IActionResult GetReviewsForAPokemon(int pokeId)
         {
-            var reviews = _mapper.Map<ICollection<ReviewDto>>(_reviewRepository.GetReviewsOfAPokemon(pokeId);
+            var reviews = _mapper.Map<ICollection<ReviewDto>>(_reviewRepository.GetReviewsOfAPokemon(pokeId));
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
