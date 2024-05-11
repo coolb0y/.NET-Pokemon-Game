@@ -8,7 +8,9 @@ namespace webapi.Helper
     {
         public MappingProfiles()
         {
+            /*CreateMap<Pokemon, PokemonDto>().ReverseMap();*/
             CreateMap<Pokemon, PokemonDto>();
+            CreateMap<PokemonDto, Pokemon>();
             CreateMap<Category, CategoryDto>();
             CreateMap<CategoryDto, Category>();
             CreateMap<Country, CountryDto>();
@@ -16,6 +18,7 @@ namespace webapi.Helper
             CreateMap<OwnerDto, Owner>();
             CreateMap<Owner,OwnerDto>();
             CreateMap<Review, ReviewDto>();
+            CreateMap<ReviewDto, Review>();
             CreateMap<Reviewer,ReviewerDto>();
         }
     }
