@@ -21,7 +21,6 @@ namespace webapi.Controllers
 
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(IEnumerable<Reviewer>))]
-
         public IActionResult GetReviewers()
         {
             var reviewers = _mapper.Map<List<ReviewerDto>>(_reviewerRepository.GetReviewers());
