@@ -1,4 +1,5 @@
-﻿using webapi.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using webapi.Data;
 using webapi.Interfaces;
 using webapi.models;
 
@@ -47,6 +48,12 @@ namespace webapi.Repository
         {
             var saved = _context.SaveChanges();
             return saved > 0 ? true : false;
+        }
+
+        public bool updateOwner(Owner owner)
+        {
+            _context.Update(owner);
+            return Save();
         }
     }
 }

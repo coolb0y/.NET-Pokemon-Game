@@ -15,11 +15,12 @@ namespace webapi.Helper
             CreateMap<CategoryDto, Category>();
             CreateMap<Country, CountryDto>();
             CreateMap<CountryDto, Country>();
-            CreateMap<OwnerDto, Owner>();
             CreateMap<Owner,OwnerDto>();
+            CreateMap<OwnerDto, Owner>();
             CreateMap<Review, ReviewDto>();
             CreateMap<ReviewDto, Review>();
             CreateMap<Reviewer,ReviewerDto>();
+            CreateMap<ReviewerDto,Reviewer>();
         }
     }
 }

@@ -107,5 +107,36 @@ namespace webapi.Controllers
             return Ok("Successfully Created");
         }
 
+        [HttpPut("{ownerId}")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+
+        public IActionResult UpdateOwner(int ownerId, [FromBody] OwnerDto updatedOwner)
+        {
+            if (updatedOwner == null)
+                return BadRequest(ModelState);
+
+            if (ownerId != updatedOwner.Id)
+                return BadRequest(ModelState);
+
+            if (!_ownerRepository.OwnerExists(ownerId))
+                return NotFound();
+
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var ownerMap = _mapper.Map<Owner>(updatedOwner);
+
+            if (!_ownerRepository.updateOwner(ownerMap))
+            {
+                ModelState.AddModelError("", "Something went wrong in updating owner");
+                return StatusCode(500, ModelState);
+            }
+
+            return NoContent();
+
+        }
+
     }
 }

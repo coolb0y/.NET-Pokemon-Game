@@ -51,6 +51,12 @@ namespace webapi.Repository
             return saved > 0 ? true : false;
         }
 
+        public bool UpdateCountry(Country country)
+        {
+            _context.Update(country);
+            return Save();
+        }
+
         /*Above function can be defined as below as well
         public ICollection<Owner> GetOwnersFromCountry(int countryId)
         {
